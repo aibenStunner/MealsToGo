@@ -18,12 +18,14 @@
     "react-dom": "17.0.1",
     "react-native": "0.64.2",
     "react-native-paper": "^4.9.2",
+    "react-native-svg": "12.1.1",
     "react-native-web": "0.17.1",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
-    "@react-native-community/eslint-config": "^3.0.1"
+    "@react-native-community/eslint-config": "^3.0.1",
+    "@types/styled-components": "^5.1.15"
   },
   "private": true
 }

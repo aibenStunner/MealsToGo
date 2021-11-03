@@ -8,7 +8,7 @@ const statusBarHeight = StatusBar.currentHeight;
 
 const SafeArea = styled(SafeAreaView)`
   flex: 1;
-  margin-top: ${statusBarHeight}px;
+  ${statusBarHeight && `margin-top: ${statusBarHeight}px`};
 `;
 
 const SearchContainer = styled(View)`
