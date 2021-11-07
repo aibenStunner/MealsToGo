@@ -10,6 +10,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import { RestaurantsScreen } from "./src/features/restaurants/screens/restuarants.screen";
 import { SafeArea } from "./src/components/utility/safe-area.component";
 import { RestaurantsContextProvider } from "./src/services/restaurants/mock/restaurants.context";
+import { LocationContextProvider } from "./src/services/location/location.context";
 
 import {
   useFonts as useOswald,
@@ -78,11 +79,13 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <RestaurantsContextProvider>
-          <NavigationContainer>
-            <AppTabs />
-          </NavigationContainer>
-        </RestaurantsContextProvider>
+        <LocationContextProvider>
+          <RestaurantsContextProvider>
+            <NavigationContainer>
+              <AppTabs />
+            </NavigationContainer>
+          </RestaurantsContextProvider>
+        </LocationContextProvider>
         <ExpoStatusBar style="auto" />
       </ThemeProvider>
     </>
