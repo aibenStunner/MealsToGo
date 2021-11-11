@@ -8,6 +8,7 @@ import { RestaurantInfoCard } from "../components/restaurant-info-card.component
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import { RestaurantsContext } from "../../../services/restaurants/mock/restaurants.context";
 import { Search } from "../components/search.component";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const RestaurantList = styled(FlatList).attrs({
   contentContainerStyle: {
@@ -25,7 +26,7 @@ const LoadingContainer = styled(View)`
   left: 50%;
 `;
 
-export const RestaurantsScreen = () => {
+export const RestaurantsScreen = ({ navigation }) => {
   const { restaurants, isLoading, error } = useContext(RestaurantsContext);
 
   return (
@@ -41,9 +42,13 @@ export const RestaurantsScreen = () => {
         renderItem={({ item }) => {
           return (
             <>
-              <Spacer position="bottom" size="large">
-                <RestaurantInfoCard restaurant={item} />
-              </Spacer>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("RestaurantDetail")}
+              >
+                <Spacer position="bottom" size="large">
+                  <RestaurantInfoCard restaurant={item} />
+                </Spacer>
+              </TouchableOpacity>
             </>
           );
         }}
