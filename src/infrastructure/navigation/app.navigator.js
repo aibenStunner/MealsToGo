@@ -10,7 +10,7 @@ import { RestaurantsNavigator } from "./restaurants.navigator";
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
-  Restaurants: "md-restaurant",
+  RestaurantsTab: "md-restaurant",
   Settings: "md-settings",
   Map: "md-map",
 };
