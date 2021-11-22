@@ -19,6 +19,7 @@ const CompactWebView = styled(WebView)`
 `;
 
 const Item = styled(View)`
+  overflow: hidden;
   padding: 10px;
   max-width: 120px;
   align-items: center;
@@ -26,8 +27,8 @@ const Item = styled(View)`
 
 const isAndroid = Platform.OS === "android";
 
-export const CompactRestaurantInfo = ({ restaurant }) => {
-  const Image_ = isAndroid ? CompactWebView : CompactImage;
+export const CompactRestaurantInfo = ({ restaurant, nonFav = true }) => {
+  const Image_ = isAndroid && nonFav ? CompactWebView : CompactImage;
   return (
     <Item>
       <Image_ source={{ uri: restaurant.photos[0] }} />
