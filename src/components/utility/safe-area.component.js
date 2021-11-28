@@ -6,4 +6,5 @@ const statusBarHeight = StatusBar.currentHeight;
 export const SafeArea = styled(SafeAreaView)`
   flex: 1;
   ${statusBarHeight && `margin-top: ${statusBarHeight}px`};
+  background-color: ${(props) => props.theme.colors.bg.primary};
 `;
