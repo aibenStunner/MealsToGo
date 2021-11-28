@@ -9,6 +9,10 @@ import { MapScreen } from "../../features/map/screens/map.screen";
 
 import { AuthenticationContext } from "../../services/authentication/authentication.context";
 
+import { RestaurantsContextProvider } from "../../services/restaurants/mock/restaurants.context";
+import { LocationContextProvider } from "../../services/location/location.context";
+import { FavouritesContextProvider } from "../../services/favourites/favourites.context";
+
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
@@ -17,12 +21,17 @@ const TAB_ICON = {
   Map: "md-map",
 };
 
-const Settings = () => {
+const Settings = ({ navigation }) => {
   const { onLogout } = useContext(AuthenticationContext);
   return (
     <SafeArea>
       <Text>Settings</Text>
-      <Button title="logout" onPress={() => onLogout()} />
+      <Button
+        title="logout"
+        onPress={() => {
+          onLogout();
+        }}
+      />
     </SafeArea>
   );
 };
@@ -49,4 +58,12 @@ const createScreenOptions = ({ route }) => {
   };
 };
 
-export const AppNavigator = () => <AppTabs />;
+export const AppNavigator = () => (
+  <RestaurantsContextProvider>
+    <LocationContextProvider>
+      <FavouritesContextProvider>
+        <AppTabs />
+      </FavouritesContextProvider>
+    </LocationContextProvider>
+  </RestaurantsContextProvider>
+);
