@@ -5950,7 +5950,7 @@ react-native-webview@11.13.0:
 
 react-native@0.64.2:
   version "0.64.2"
-  resolved "https://registry.npmjs.org/react-native/-/react-native-0.64.2.tgz"
+  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.64.2.tgz#233b6ed84ac4749c8bc2a2d6cf63577a1c437d18"
   integrity sha512-Ty/fFHld9DcYsFZujXYdeVjEhvSeQcwuTGXezyoOkxfiGEGrpL/uwUZvMzwShnU4zbbTKDu2PAm/uwuOittRGA==
   dependencies:
     "@jest/create-cache-key-function" "^26.5.0"
