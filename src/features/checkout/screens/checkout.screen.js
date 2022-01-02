@@ -80,7 +80,7 @@ export const CheckoutScreen = ({ navigation }) => {
           </List.Section>
           <TextComponent>Total: {sum / 100}</TextComponent>
         </Spacer>
-        <Spacer position="top" size="large" />
+        <Spacer position="top" />
         <Divider />
         <NameInput
           label="Name"
@@ -102,7 +102,7 @@ export const CheckoutScreen = ({ navigation }) => {
             />
           )}
         </Spacer>
-        <Spacer position="top" size="xxl" />
+        <Spacer position="top" />
         <PayButton
           disabled={isLoading}
           icon="cash-usd"

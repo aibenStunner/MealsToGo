@@ -16,10 +16,12 @@ export const CheckoutNavigator = () => {
     >
       <CheckoutStack.Screen name="Checkout" component={CheckoutScreen} />
       <CheckoutStack.Screen
+        options={{ headerShown: false }}
         name="CheckoutSuccess"
         component={CheckoutSuccessScreen}
       />
       <CheckoutStack.Screen
+        options={{ headerShown: false }}
         name="CheckoutError"
         component={CheckoutErrorScreen}
       />
